@@ -1,0 +1,13 @@
+node_modules/
+demo/
+build/
+src/
+.editorconfig
+.eslintrc
+.idea/
+.babelrc
+.eslintignore
+.gitignore
+.npmignore
+.npmrc
+index.html
