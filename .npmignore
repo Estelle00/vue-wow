@@ -1,0 +1,7 @@
+node_modules/
+index.js
+webpack.config.js
+src/
+.editorconfig
+.eslintrc
+.idea/
