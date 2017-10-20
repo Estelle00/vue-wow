@@ -3,9 +3,6 @@
     <slot></slot>
   </section>
 </template>
-<style lang="scss">
-
-</style>
 <script>
   export default {
     name: 'UAnimateContainer',
