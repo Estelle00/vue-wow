@@ -3,9 +3,6 @@
     <slot></slot>
   </div>
 </template>
-<style lang="scss">
-
-</style>
 <script>
   export default {
     name: 'UAnimate',
@@ -109,7 +106,7 @@
       },
       resetAnimation (event) {
         this.parent.removeVM(this)
-        const {animateClass, name} = this
+        const {animateClass} = this
         if (event.type.toLowerCase().indexOf('animationend') >= 0) {
           this.className = {}
           this.style = {}
