@@ -1,9 +1,6 @@
 <template>
-  <img :src="url" :alt="alt"/>
+  <img :src="defaultImg" :alt="alt"/>
 </template>
-<style lang="scss">
-
-</style>
 <script>
   import mixins from 'mixins/index'
   export default {
@@ -13,6 +10,12 @@
       src: {
         type: String,
         required: true
+      },
+      defaultImg: {
+        type: String,
+        default () {
+          return ''
+        }
       },
       alt: {
         type: String,
