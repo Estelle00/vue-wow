@@ -26,22 +26,9 @@
         type: String,
         default: ''
       },
-      offset: {
-        type: Number,
-        default: 0
-      },
       animateClass: {
         type: String,
         default: 'animated'
-      },
-      // 是否立即执行 忽略屏幕位置计算
-      begin: {
-        type: Boolean,
-        default: false
-      },
-      scrollListen: {
-        type: Boolean,
-        default: true
       }
     },
     data () {
@@ -50,9 +37,7 @@
           visibility: 'hidden'
         },
         className: {
-        },
-        end: false,
-        status: false
+        }
       }
     },
     created () {
@@ -63,7 +48,6 @@
         } else {
           this.applyStyle(true)
         }
-        this.parent.setVM(this)
       }
     },
     mounted () {
@@ -97,50 +81,21 @@
         }
       },
       resetAnimation (event) {
-        this.parent.removeVM(this)
+        this.removeVM(this)
         const {animateClass} = this
         if (event.type.toLowerCase().indexOf('animationend') >= 0) {
           this.className = {}
           this.style = {}
-          this.end = true
-          this.status = false
-          this.$emit('end', this)
+          this.endCallback()
         }
       },
       show () {
-        const {status, end} = this
-        if (status || end) return ''
-        this.status = true
-        this.$emit('start', this)
         this.applyStyle()
-        /*
-        this.className = {
-          ...className,
-          [animateClass]: true
-        }
-        */
-        // this.emitEvent(box, this.wowEvent);
         const elem = this.$el
         const eventArr = ['animationend', 'oanimationend', 'webkitAnimationEnd', 'MSAnimationEnd']
         eventArr.forEach(event => {
           on(elem, event, this.resetAnimation)
         })
-      },
-      start () {
-        // 执行运动校验
-        console.log(1)
-        const {begin} = this
-        if (begin || this.isVisible()) {
-          this.show()
-          return false
-        } else {
-          return true
-        }
-      },
-      isVisible () {
-        const {scrollListen, offset} = this
-        if (!scrollListen) return false
-        return isVisible(this.$el, offset)
       }
     },
     computed: {
