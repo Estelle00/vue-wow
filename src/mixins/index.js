@@ -31,6 +31,9 @@ export default {
       this.addVM()
     }
   },
+  mounted () {
+    this.start()
+  },
   methods: {
     addVM () {
       const {parent} = this

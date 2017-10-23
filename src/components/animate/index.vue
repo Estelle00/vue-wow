@@ -50,9 +50,6 @@
         }
       }
     },
-    mounted () {
-      this.start()
-    },
     methods: {
       animate (callback) {
         if (window.requestAnimationFrame) {
