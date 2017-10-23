@@ -46,9 +46,12 @@ const webpackConfig = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      'components': path.resolve(ROOT_PATH, './src/components'),
+      'utils': path.resolve(ROOT_PATH, './src/utils'),
+      'mixins': path.resolve(ROOT_PATH, './src/mixins'),
       // 'vue': 'vue/dist/vue.common.js',
-      // 'vue-wow': path.resolve(ROOT_PATH, './src/index.js')
-      'vue-wow': path.resolve(ROOT_PATH, './dist/vue-wow.min.js')
+      'vue-wow': path.resolve(ROOT_PATH, './src/index.js')
+      // 'vue-wow': path.resolve(ROOT_PATH, './dist/vue-wow.min.js')
     }
   },
   devServer: {
@@ -97,6 +100,15 @@ if (process.env.NODE_ENV === 'production') {
       library: 'VueWow',
       libraryTarget: 'umd',
       umdNamedDefine: true
+    }
+
+    webpackConfig.externals = {
+      vue: {
+        root: 'Vue',
+        commonjs: 'vue',
+        commonjs2: 'vue',
+        amd: 'vue'
+      }
     }
     // Banner
     const moment = require('moment')

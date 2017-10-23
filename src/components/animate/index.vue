@@ -4,7 +4,10 @@
   </div>
 </template>
 <script>
+  import {isVisible, on, off} from 'utils/dom'
+  import mixins from 'mixins/index'
   export default {
+    mixins: [mixins],
     name: 'UAnimate',
     props: {
       duration: {
@@ -35,6 +38,10 @@
       begin: {
         type: Boolean,
         default: false
+      },
+      scrollListen: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
@@ -89,21 +96,6 @@
           animationIterationCount: iteration
         }
       },
-
-      offsetTop (element) {
-        const offsetParent = element.offsetParent
-        return element.offsetTop + (offsetParent ? this.offsetTop(offsetParent) : 0)
-      },
-      addEvent (event, fn) {
-        const elem = this.$el
-        if (elem.addEventListener != null) {
-          elem.addEventListener(event, fn, false)
-        } else if (elem.attachEvent != null) {
-          elem.attachEvent('on' + event, fn)
-        } else {
-          elem[event] = fn
-        }
-      },
       resetAnimation (event) {
         this.parent.removeVM(this)
         const {animateClass} = this
@@ -128,10 +120,11 @@
         }
         */
         // this.emitEvent(box, this.wowEvent);
-        this.addEvent('animationend', this.resetAnimation)
-        this.addEvent('oanimationend', this.resetAnimation)
-        this.addEvent('webkitAnimationEnd', this.resetAnimation)
-        this.addEvent('MSAnimationEnd', this.resetAnimation)
+        const elem = this.$el
+        const eventArr = ['animationend', 'oanimationend', 'webkitAnimationEnd', 'MSAnimationEnd']
+        eventArr.forEach(event => {
+          on(elem, event, this.resetAnimation)
+        })
       },
       start () {
         // 执行运动校验
@@ -145,33 +138,12 @@
         }
       },
       isVisible () {
-        if (!this.$isServer) {
-          const element = window.document.documentElement
-          const {offset} = this
-          const offsetTop = this.offsetTop(this.$el)
-          const viewTop = window.pageYOffset
-          const elClientHeight = this.$el.clientHeight
-          const innerHeight = window.innerHeight || document.documentElement.clientHeight
-          const viewBottom = viewTop + Math.min(element.clientHeight, innerHeight) - offset
-          const bottom = offsetTop + elClientHeight
-          return offsetTop <= viewBottom && bottom >= viewTop
-        }
+        const {scrollListen, offset} = this
+        if (!scrollListen) return false
+        return isVisible(this.$el, offset)
       }
     },
     computed: {
-      parent () {
-        let parent = this.$parent
-        while (parent.$options.name !== 'UAnimateContainer') {
-          parent = parent.$parent
-        }
-        return parent
-      },
-      // 判断是否为手机
-      disabled () {
-        if (!this.$isServer) {
-          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent)
-        }
-      }
     }
   }
 </script>
