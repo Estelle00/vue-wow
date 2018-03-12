@@ -15,7 +15,7 @@ module.exports = merge(webpackBaseConfig, {
     vendors: ['vue']
   },
   output: {
-    path: path.resolve(ROOT_PATH, 'examples/dist'),
+    path: path.resolve(ROOT_PATH, 'docs'),
     publicPath: '',
     filename: '[name].js',
     chunkFilename: '[name].chunk.js'
@@ -29,9 +29,15 @@ module.exports = merge(webpackBaseConfig, {
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendors', filename: 'vendor.bundle.js' }),
     new HtmlWebpackPlugin({
       inject: true,
-      filename: path.resolve(ROOT_PATH, 'examples/dist/index.html'),
+      filename: path.resolve(ROOT_PATH, 'docs/index.html'),
       template: path.resolve(ROOT_PATH, 'examples/index.html')
     }),
-    new FriendlyErrorsPlugin()
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      parallel: true,
+      sourceMap: true
+    })
   ]
 })
