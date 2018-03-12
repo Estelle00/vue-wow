@@ -3,16 +3,21 @@ module.exports = {
   root: true,
   // 对Babel解析器的包装使其与 ESLint 兼容。
   parserOptions: {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
     "parser": "babel-eslint",
-    "ecmaVersion": 2017,
+    "ecmaVersion": 6,
     "sourceType": "module"
   },
   globals: {
-    IS_DEV: true
+    IS_DEV: true,
+    expect: true,
+    it: true,
+    describe: true
   },
   "env": {
     "browser": true,
-    "node": true,
     "commonjs": true,
     "es6": true
   },
