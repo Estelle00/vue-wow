@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
-    "build": "cross-env NODE_ENV=production BUILD=publish webpack --config ./build/webpack.prd.config.js --progress --hide-modules"
+    "dist:prd": "webpack --config build/webpack.dist.prd.config.js"
   },
   "keywords": [
     "vue-wow",
@@ -32,6 +32,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-vue-app": "^2.0.0",
+    "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.7",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^11.0.0",
