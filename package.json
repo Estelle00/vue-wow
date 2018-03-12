@@ -2,7 +2,7 @@
   "name": "vue-wow",
   "version": "1.0.5",
   "description": "VUE浏览器可视窗口加载",
-  "main": "dist/vue-wow.min.js",
+  "main": "dist/vue-wow.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
@@ -61,5 +61,9 @@
   },
   "dependencies": {
     "vue": "^2.5.2"
-  }
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 3.0.0"
+  },
 }
