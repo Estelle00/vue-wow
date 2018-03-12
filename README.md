@@ -3,6 +3,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/vue-wow.svg?style=flat-square)](https://npmjs.org/package/vue-wow)
 [![NPM downloads](https://img.shields.io/npm/dt/vue-wow.svg?style=flat-square)](https://npmjs.org/package/vue-wow)
 ![JS gzip size](http://img.badgesize.io/https://unpkg.com/vue-wow/dist/vue-wow.min.js?compression=gzip&label=gzip%20size:%20JS&style=flat-square)
+
 浏览器可视窗口加载 [DEMO地址](https://estelle00.github.io/vue-wow) 
 
 ### Use Setup for Webpack
