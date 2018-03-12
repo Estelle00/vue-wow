@@ -5,7 +5,7 @@
   "main": "dist/vue-wow.min.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
-    "doc": "cross-env NODE_ENV=production BUILD=doc webpack --config ./build/webpack.config.js --progress --hide-modules",
+    "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "build": "cross-env NODE_ENV=production BUILD=publish webpack --config ./build/webpack.prd.config.js --progress --hide-modules"
   },
   "keywords": [

@@ -11,7 +11,7 @@ const ROOT_PATH = path.resolve(__dirname, '../')
 module.exports = merge(webpackBaseConfig, {
   devtool: 'eval-source-map',
   entry: {
-    main: path.resolve(ROOT_PATH, 'examples/main')
+    main: path.resolve(ROOT_PATH, 'examples/index')
   },
   output: {
     path: path.resolve(ROOT_PATH, 'examples/dist'),
