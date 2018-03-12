@@ -40,7 +40,6 @@
         this.interval = setInterval(this.scrollCallback, 50)
       },
       setVM (vm) {
-        console.log(vm)
         const index = this.all.findIndex(item => item._uid === vm._uid)
         if (index < 0) {
           this.all.push(vm)

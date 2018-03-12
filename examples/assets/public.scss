@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+.ui-arrow-solid {
+	display: block;
+	width: 0;
+	height: 0;
+	border-left: 5px solid #555;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	-webkit-transition: transform 0.2s linear;
+}

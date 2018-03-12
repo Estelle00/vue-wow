@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.icon-delete {
+	width: 40px;
+	height: 100%;
+	background-color: transparent;
+	cursor: pointer;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	&::before {
+		content: "";
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-image: url("../assets/svg/delete.svg");
+		background-size: 16px auto;
+		background-position: center;
+		-webkit-transition: transform 0.2s ease-out;
+		transition: transform 0.2s ease-out;
+	}
+	&:hover {
+		&::before {
+			-webkit-transform: scale(1.4);
+			transform: scale(1.4);
+		}
+	}
+}
