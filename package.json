@@ -5,6 +5,7 @@
   "main": "dist/vue-wow.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
+    "docs": "webpack --config build/webpack.docs.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "dist:prd": "webpack --config build/webpack.dist.prd.config.js"
   },
@@ -65,5 +66,5 @@
   "engines": {
     "node": ">= 8.0.0",
     "npm": ">= 3.0.0"
-  },
+  }
 }
