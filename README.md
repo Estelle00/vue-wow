@@ -1,5 +1,5 @@
 # vue-wow
-浏览器可视窗口加载 [DEMO地址](https://estelle00.github.io/vue-wow/docs) 
+浏览器可视窗口加载 [DEMO地址](https://estelle00.github.io/vue-wow) 
 
 ### Use Setup for Webpack
 
