@@ -4,7 +4,7 @@
 <script>
   import mixins from 'mixins/index'
   export default {
-    name: 'LazyImg',
+    name: 'ULazyImg',
     mixins: [mixins],
     props: {
       src: {

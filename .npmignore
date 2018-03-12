@@ -3,6 +3,7 @@ docs/
 examples
 build/
 src/
+test/
 .idea/
 .babelrc
 .editorconfig

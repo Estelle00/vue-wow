@@ -36,7 +36,7 @@ module.exports = {
     alias: {
       'components': path.resolve(ROOT_PATH, './src/components'),
       'utils': path.resolve(ROOT_PATH, './src/utils'),
-      'mixins': path.resolve(ROOT_PATH, './src/mixins'),
+      'mixins': path.resolve(ROOT_PATH, './src/mixins')
     }
   },
   plugins: [

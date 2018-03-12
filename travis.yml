@@ -1,0 +1,13 @@
+language: node_js
+sudo: false
+node_js:
+  - 8
+cache:
+  yarn true
+branches:
+  only:
+  - dev
+install:
+  - yarn install
+script:
+  - npm run lint && npm run test
