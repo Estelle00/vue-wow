@@ -1,6 +1,6 @@
 {
   "name": "vue-wow",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "VUE浏览器可视窗口加载",
   "main": "dist/vue-wow.js",
   "scripts": {
@@ -8,6 +8,13 @@
     "docs": "webpack --config build/webpack.docs.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "dist:prd": "webpack --config build/webpack.dist.prd.config.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "bugs": {
+    "url": "https://github.com/Estelle00/vue-wow/issues"
   },
   "keywords": [
     "vue-wow",
