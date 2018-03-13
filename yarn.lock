@@ -4588,7 +4588,7 @@ karma-webpack@^2.0.13:
     source-map "^0.5.6"
     webpack-dev-middleware "^1.12.0"
 
-karma@^2.0.0:
+karma@2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/karma/download/karma-2.0.0.tgz#a02698dd7f0f05ff5eb66ab8f65582490b512e58"
   dependencies:
@@ -6589,7 +6589,7 @@ request-progress@^2.0.1:
   dependencies:
     throttleit "^1.0.0"
 
-request@2, request@^2.0.0, request@^2.74.0:
+request@2:
   version "2.84.0"
   resolved "http://registry.npm.taobao.org/request/download/request-2.84.0.tgz#59ca54a18663d7986aa37dbe4632aa8ada3a467f"
   dependencies:
@@ -6669,7 +6669,7 @@ request@2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.81.0:
+request@^2.0.0, request@^2.74.0, request@^2.81.0:
   version "2.85.0"
   resolved "http://registry.npm.taobao.org/request/download/request-2.85.0.tgz#5a03615a47c61420b3eb99b7dba204f83603e1fa"
   dependencies:
@@ -7794,8 +7794,8 @@ ultron@~1.1.0:
   resolved "http://registry.npm.taobao.org/ultron/download/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
 
 umd@^3.0.0:
-  version "3.0.1"
-  resolved "http://registry.npm.taobao.org/umd/download/umd-3.0.1.tgz#8ae556e11011f63c2596708a8837259f01b3d60e"
+  version "3.0.2"
+  resolved "http://registry.npm.taobao.org/umd/download/umd-3.0.2.tgz#95bdbc6d3983050df600431f44e5faeb4b7b3d45"
 
 unc-path-regex@^0.1.0:
   version "0.1.2"
