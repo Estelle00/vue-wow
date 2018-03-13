@@ -8,9 +8,9 @@ cache:
   - node_modules
 branches:
   only:
-  - dev
+  - master
 install:
-  - yarn install
+  - yarn
 script:
   - yarn lint && yarn test
 after_success:
