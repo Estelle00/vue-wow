@@ -1,4 +1,6 @@
 # vue-wow
+[![Build Status](https://travis-ci.org/Estelle00/vue-wow.svg?branch=master)](https://travis-ci.org/Estelle00/vue-wow)
+[![codecov](https://codecov.io/gh/Estelle00/vue-wow/branch/master/graph/badge.svg)](https://codecov.io/gh/Estelle00/vue-wow)
 [![vue-wow](https://img.shields.io/npm/v/vue-wow.svg?style=flat-square)](https://www.npmjs.org/package/vue-wow)
 [![NPM downloads](http://img.shields.io/npm/dm/vue-wow.svg?style=flat-square)](https://npmjs.org/package/vue-wow)
 [![NPM downloads](https://img.shields.io/npm/dt/vue-wow.svg?style=flat-square)](https://npmjs.org/package/vue-wow)
