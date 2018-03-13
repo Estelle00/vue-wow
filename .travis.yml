@@ -3,17 +3,16 @@ sudo: required
 node_js:
   - 8
 cache:
-  yarn true
+  yarn: true
+  directories:
+  - node_modules
 branches:
   only:
   - dev
 install:
   - yarn install
 script:
-  - npm run lint && npm run test
-before_script:
-  - 'sudo chown root /opt/google/chrome/chrome-sandbox'
-  - 'sudo chmod 4755 /opt/google/chrome/chrome-sandbox'
+  - yarn lint && yarn test
 after_success:
   - |
     cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov
