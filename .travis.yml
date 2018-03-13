@@ -1,0 +1,18 @@
+language: node_js
+sudo: required
+node_js:
+  - 8
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  only:
+  - dev
+install:
+  - yarn install
+script:
+  - yarn lint && yarn test
+after_success:
+  - |
+    cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov
