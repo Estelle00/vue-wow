@@ -24,15 +24,10 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: './coverage',
-      reporters: [{
-        type: 'text-summary'
-      }, {
-        type: 'html'
-      }, {
-        // 这就是Codecov支持的文件类型
-        type: 'cobertura',
-        subdir: '.'
-      }]
+      reporters: [
+        { type: 'lcov', subdir: '.' },
+        { type: 'text-summary' }
+      ]
     }
   })
 }
