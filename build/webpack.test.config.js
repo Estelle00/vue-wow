@@ -8,12 +8,7 @@ const webpackBaseConfig = require('./webpack.base.config')
 const path = require('path')
 const ROOT_PATH = path.resolve(__dirname, '../')
 const webpackConfig = merge(webpackBaseConfig, {
-  devtool: 'eval-source-map',
-  resolve: {
-    alias: {
-      'vue-wow': path.resolve(ROOT_PATH, 'src/index')
-    }
-  },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

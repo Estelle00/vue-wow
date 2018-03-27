@@ -9,7 +9,7 @@
     "docs": "webpack --config build/webpack.docs.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "dist:prd": "webpack --config build/webpack.dist.prd.config.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "unit": "cross-env NODE_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
   "files": [
