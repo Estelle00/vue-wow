@@ -4,8 +4,8 @@
 import UAnimateContainer from 'components/container/index'
 import UAnimate from 'components/animate/index'
 function install (Vue) {
-  Vue.components(UAnimateContainer.name, UAnimateContainer)
-  Vue.components(UAnimate.name, UAnimate)
+  Vue.component(UAnimateContainer.name, UAnimateContainer)
+  Vue.component(UAnimate.name, UAnimate)
 }
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
