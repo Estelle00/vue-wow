@@ -9,7 +9,7 @@
     "docs": "webpack --config build/webpack.docs.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "dist:prd": "webpack --config build/webpack.dist.prd.config.js",
-    "unit": "cross-env BABEL_ENV=testing karma start test/unit/karma.conf.js --single-run",
+    "unit": "cross-env NODE_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
   "files": [
@@ -63,7 +63,7 @@
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^3.0.6",
-    "karma": "^2.0.0",
+    "karma": "2.0.0",
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.3.0",
     "karma-phantomjs-launcher": "^1.0.4",
