@@ -2,7 +2,7 @@
   <img :src="defaultImg" :alt="alt"/>
 </template>
 <script>
-  import mixins from 'mixins/index'
+  import mixins from '../../mixins/index'
   export default {
     name: 'ULazyImg',
     mixins: [mixins],

@@ -4,8 +4,8 @@
   </div>
 </template>
 <script>
-  import {isVisible, on, off} from 'utils/dom'
-  import mixins from 'mixins/index'
+  import {isVisible, on, off} from '../../utils/dom'
+  import mixins from '../../mixins/index'
   export default {
     mixins: [mixins],
     name: 'UAnimate',

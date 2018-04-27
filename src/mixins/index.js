@@ -1,8 +1,8 @@
 /**
  * Created by liubingwen on 2017/10/23.
  */
-import {isMobile} from 'utils/assist'
-import {isVisible} from 'utils/dom'
+import {isMobile} from '../utils/assist'
+import {isVisible} from '../utils/dom'
 export default {
   props: {
     offset: {

@@ -4,7 +4,7 @@
   </section>
 </template>
 <script>
-  import {on, off} from 'utils/dom'
+  import {on, off} from '../../utils/dom'
   export default {
     name: 'UAnimateContainer',
     props: {

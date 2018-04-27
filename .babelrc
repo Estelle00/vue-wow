@@ -8,11 +8,5 @@
     }],
     "vue-app"
   ],
-  "plugins": [
-    "transform-es2015-modules-commonjs",
-    ["transform-es2015-classes", { "loose": true }],
-    "transform-proto-to-assign",
-    "transform-runtime",
-    "minify-dead-code-elimination"
-  ]
+  "plugins": ["external-helpers"]
 }
