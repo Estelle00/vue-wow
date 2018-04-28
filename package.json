@@ -5,7 +5,9 @@
   "main": "dist/vue-wow.min.js",
   "module": "dist/vue-wow.esm.js",
   "scripts": {
-    "build": "rollup -c ./build/rollup.config.js"
+    "build": "rollup -c ./build/rollup.config.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "files": [
     "dist",
