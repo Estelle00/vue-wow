@@ -83,7 +83,11 @@ export default {
     },
     // 判断是否在手机启动
     disabled () {
-      return !this.parent.conf.mobile && isMobile()
+      if (this.parent) {
+        return !this.parent.conf.mobile && isMobile()
+      } else {
+        return false
+      }
     }
   }
 }
