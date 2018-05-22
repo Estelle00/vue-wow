@@ -1,11 +1,11 @@
 {
   "name": "vue-wow",
-  "version": "1.0.7",
+  "version": "1.1.1",
   "description": "VUE浏览器可视窗口加载",
   "main": "dist/vue-wow.min.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue src test/unit/specs",
-    "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8080 --config build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --host 0.0.0.0 --port 8080 --config build/webpack.dev.config.js",
     "docs": "webpack --config build/webpack.docs.config.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
     "dist:prd": "webpack --config build/webpack.dist.prd.config.js",

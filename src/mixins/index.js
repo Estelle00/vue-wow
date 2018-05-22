@@ -81,9 +81,13 @@ export default {
         return undefined
       }
     },
-    // 判断是否为手机
+    // 判断是否在手机启动
     disabled () {
-      return isMobile()
+      if (this.parent) {
+        return !this.parent.conf.mobile && isMobile()
+      } else {
+        return false
+      }
     }
   }
 }
