@@ -22,8 +22,8 @@ module.exports = merge(webpackBaseConfig, {
   },
   resolve: {
     alias: {
-      // 'vue-wow': path.resolve(ROOT_PATH, 'src/index')
-      'vue-wow': path.resolve(ROOT_PATH, 'dist/vue-wow.min')
+      'vue-wow': path.resolve(ROOT_PATH, 'src/index')
+      // 'vue-wow': path.resolve(ROOT_PATH, 'dist/vue-wow.min')
     }
   },
   plugins: [
