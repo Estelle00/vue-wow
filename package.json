@@ -1,6 +1,6 @@
 {
   "name": "vue-wow",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "VUE浏览器可视窗口加载",
   "main": "dist/vue-wow.min.js",
   "scripts": {
