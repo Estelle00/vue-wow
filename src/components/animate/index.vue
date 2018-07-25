@@ -78,8 +78,10 @@
         }
       },
       resetAnimation (event) {
-        this.removeVM(this)
-        const {animateClass} = this
+        try {
+          this.removeVM(this)
+        } catch (e) {
+        }
         if (event.type.toLowerCase().indexOf('animationend') >= 0) {
           this.className = {}
           this.style = {}

@@ -28,21 +28,17 @@ export default {
   },
   created () {
     if (!this.$isServer) {
-      this.addVM()
+      try {
+        this.setVM(this)
+      } catch (e) {
+      }
     }
   },
   mounted () {
     this.start()
   },
+  inject: ['setVM', 'removeVM', 'disabled'],
   methods: {
-    addVM () {
-      const {parent} = this
-      parent && parent.setVM(this)
-    },
-    removeVM () {
-      const {parent} = this
-      parent && parent.removeVM(this)
-    },
     start () {
       // 执行运动校验
       const {begin} = this
@@ -66,24 +62,6 @@ export default {
       const {scrollListen, offset} = this
       if (!scrollListen) return false
       return isVisible(this.$el, offset)
-    }
-  },
-  computed: {
-    parent () {
-      const {scrollListen} = this
-      if (scrollListen) {
-        let parent = this.$parent
-        while (parent && parent.$options.name !== 'UAnimateContainer') {
-          parent = parent.$parent
-        }
-        return parent
-      } else {
-        return undefined
-      }
-    },
-    // 判断是否为手机
-    disabled () {
-      return isMobile()
     }
   }
 }

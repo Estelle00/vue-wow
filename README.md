@@ -27,7 +27,7 @@ import VueWow from 'vue-wow'
 Vue.use(VueWow)
 
 // mount with component
-import {UAnimateContainer, UAnimate} from 'vue'
+import {UAnimateContainer, UAnimate} from 'vue-wow'
 
 export default {
   components: {

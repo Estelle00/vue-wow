@@ -5,6 +5,7 @@
 </template>
 <script>
   import {on, off} from 'utils/dom'
+  import {isMobile} from 'utils/assist'
   export default {
     name: 'UAnimateContainer',
     props: {
@@ -23,6 +24,9 @@
     },
     data () {
       return {
+        conf: Object.assign({}, {
+          mobile: true
+        }, this.config),
         all: [],
         vmArr: [],
         scrolled: false,
@@ -34,10 +38,13 @@
     },
     methods: {
       start () {
-        const {vmArr} = this
-        on(window, 'scroll', this.scrollHandler)
-        on(window, 'resize', this.scrollHandler)
-        this.interval = setInterval(this.scrollCallback, 50)
+        if (!this.$isServer) {
+          if (!this.disabled) {
+            on(window, 'scroll', this.scrollHandler)
+            on(window, 'resize', this.scrollHandler)
+            this.interval = setInterval(this.scrollCallback, 50)
+          }
+        }
       },
       setVM (vm) {
         const index = this.all.findIndex(item => item._uid === vm._uid)
@@ -83,10 +90,20 @@
         }
       }
     },
+    provide () {
+      return {
+        setVM: this.setVM,
+        removeVM: this.removeVM,
+        disabled: this.disabled
+      }
+    },
     destroyed () {
       this.stop()
     },
     computed: {
+      disabled () {
+        return !this.conf.mobile && isMobile()
+      }
     }
   }
 </script>
