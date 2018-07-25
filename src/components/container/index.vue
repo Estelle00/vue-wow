@@ -90,6 +90,13 @@
         }
       }
     },
+    provide () {
+      return {
+        setVM: this.setVM,
+        removeVM: this.removeVM,
+        disabled: this.disabled
+      }
+    },
     destroyed () {
       this.stop()
     },
