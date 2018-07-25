@@ -12,4 +12,6 @@ test/
 .gitignore
 .npmignore
 .npmrc
+.travis.yml
+circle.yml
 yarn.lock
