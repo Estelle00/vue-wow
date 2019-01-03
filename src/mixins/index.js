@@ -37,7 +37,7 @@ export default {
   mounted () {
     this.start()
   },
-  inject: ['setVM', 'removeVM', 'disabled'],
+  inject: ['setVM', 'removeVM', 'disabled', 'target'],
   methods: {
     start () {
       // 执行运动校验
@@ -61,7 +61,7 @@ export default {
     isVisible () {
       const {scrollListen, offset} = this
       if (!scrollListen) return false
-      return isVisible(this.$el, offset)
+      return isVisible(this.$el, offset, this.target())
     }
   }
 }

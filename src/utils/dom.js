@@ -41,11 +41,11 @@ export const offsetTop = function (element) {
   return element.offsetTop + (offsetParent ? offsetTop(offsetParent) : 0)
 }
 
-export const isVisible = function (ele, offset = 0) {
+export const isVisible = function (ele, offset = 0, target) {
   if (!isServer) {
     const element = window.document.documentElement
     const offsetTopN = offsetTop(ele)
-    const viewTop = window.pageYOffset
+    const viewTop = target.scrollTop || window.pageYOffset
     const elClientHeight = ele.clientHeight
     const innerHeight = window.innerHeight || document.documentElement.clientHeight
     const viewBottom = viewTop + Math.min(element.clientHeight, innerHeight) - offset
