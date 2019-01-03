@@ -20,6 +20,10 @@
       live: {
         type: Boolean,
         default: true
+      },
+      target: {
+        type: Function,
+        default: () => window
       }
     },
     data () {
@@ -40,7 +44,8 @@
       start () {
         if (!this.$isServer) {
           if (!this.disabled) {
-            on(window, 'scroll', this.scrollHandler)
+            const targetNode = this.target();
+            on(targetNode, 'scroll', this.scrollHandler)
             on(window, 'resize', this.scrollHandler)
             this.interval = setInterval(this.scrollCallback, 50)
           }
@@ -83,7 +88,8 @@
       },
       stop () {
         this.stopped = true
-        off(window, 'scroll', this.scrollHandler)
+        const targetNode = this.target()
+        off(targetNode, 'scroll', this.scrollHandler)
         off(window, 'resize', this.scrollHandler)
         if (this.interval !== null) {
           clearInterval(this.interval)
@@ -94,7 +100,8 @@
       return {
         setVM: this.setVM,
         removeVM: this.removeVM,
-        disabled: this.disabled
+        disabled: this.disabled,
+        target: this.target
       }
     },
     destroyed () {
