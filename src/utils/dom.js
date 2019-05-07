@@ -41,7 +41,7 @@ export const offsetTop = function (element) {
   return element.offsetTop + (offsetParent ? offsetTop(offsetParent) : 0)
 }
 
-export const isVisible = function (ele, offset = 0, target) {
+export const isVisible = function (ele, offset = 0, target = window) {
   if (!isServer) {
     const element = window.document.documentElement
     const offsetTopN = offsetTop(ele)
