@@ -73,6 +73,7 @@ export default {
 | Name            | Type    | Default | Description |
 |-----------------|---------| ------- | ----------- |
 | name            | String  | ''      | 组件动画的名称class（推荐填写animate.css，如fadeIn） |
+| el            | String  | 'div'      | 组件渲染标签  |
 | duration        | String  | 1s      | 动画持续时间  |
 | delay           | String  | 0s      | 动画延迟时间  |
 | iteration       | Number  | 1       | 动画运行次数  |
