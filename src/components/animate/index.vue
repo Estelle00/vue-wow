@@ -1,7 +1,7 @@
 <template>
-  <div :style="style" :class="className">
+  <component :is="el" :style="style" :class="className">
     <slot></slot>
-  </div>
+  </component>
 </template>
 <script>
   import {isVisible, on, off} from 'utils/dom'
@@ -10,6 +10,10 @@
     mixins: [mixins],
     name: 'UAnimate',
     props: {
+      el: {
+        type: String,
+        default: 'div'
+      },
       duration: {
         type: String,
         default: '1s'
