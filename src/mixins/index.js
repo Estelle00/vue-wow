@@ -1,8 +1,7 @@
 /**
  * Created by liubingwen on 2017/10/23.
  */
-import {isMobile} from 'utils/assist'
-import {isVisible} from 'utils/dom'
+import { isVisible } from "@/utils/dom";
 export default {
   props: {
     offset: {
@@ -20,48 +19,49 @@ export default {
       default: true
     }
   },
-  data () {
+  data() {
     return {
       end: false,
       status: false
-    }
+    };
   },
-  created () {
+  created() {
     if (!this.$isServer) {
       try {
-        this.setVM(this)
+        this.setVM(this);
       } catch (e) {
+        console.log(e);
       }
     }
   },
-  mounted () {
-    this.start()
+  mounted() {
+    this.start();
   },
-  inject: ['setVM', 'removeVM', 'disabled', 'target'],
+  inject: ["setVM", "removeVM", "disabled", "target"],
   methods: {
-    start () {
+    start() {
       // 执行运动校验
-      const {begin} = this
+      const { begin } = this;
       if (begin || this.isVisible()) {
-        const {status, end} = this
-        if (status || end) return ''
-        this.status = true
-        this.$emit('start', this)
-        this.show()
-        return false
+        const { status, end } = this;
+        if (status || end) return "";
+        this.status = true;
+        this.$emit("start", this);
+        this.show();
+        return false;
       } else {
-        return true
+        return true;
       }
     },
-    endCallback () {
-      this.end = true
-      this.status = false
-      this.$emit('end', this)
+    endCallback() {
+      this.end = true;
+      this.status = false;
+      this.$emit("end", this);
     },
-    isVisible () {
-      const {scrollListen, offset} = this
-      if (!scrollListen) return false
-      return isVisible(this.$el, offset, this.target())
+    isVisible() {
+      const { scrollListen, offset } = this;
+      if (!scrollListen) return false;
+      return isVisible(this.$el, offset, this.target());
     }
   }
-}
+};
