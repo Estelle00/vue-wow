@@ -13,32 +13,32 @@ export default {
       type: Object,
       default() {
         return {
-          mobile: true
+          mobile: true,
         };
-      }
+      },
     },
     live: {
       type: Boolean,
-      default: true
+      default: true,
     },
     target: {
       type: Function,
-      default: () => window
-    }
+      default: () => window,
+    },
   },
   data() {
     return {
       conf: Object.assign(
         {},
         {
-          mobile: true
+          mobile: true,
         },
         this.config
       ),
       all: [],
       vmArr: [],
       scrolled: false,
-      interval: null
+      interval: null,
     };
   },
   mounted() {
@@ -56,14 +56,14 @@ export default {
       }
     },
     setVM(vm) {
-      const index = this.all.findIndex(item => item._uid === vm._uid);
+      const index = this.all.findIndex((item) => item._uid === vm._uid);
       if (index < 0) {
         this.all.push(vm);
         this.vmArr.push(vm);
       }
     },
     removeVM(vm) {
-      const index = this.vmArr.findIndex(item => item._uid === vm._uid);
+      const index = this.vmArr.findIndex((item) => item._uid === vm._uid);
       if (index > -1) {
         this.vmArr.splice(index, 1);
       }
@@ -74,7 +74,7 @@ export default {
     scrollCallback() {
       if (this.scrolled) {
         this.scrolled = false;
-        this.vmArr.map(vm => {
+        this.vmArr.map((vm) => {
           try {
             const status = vm.start();
             if (!status) {
@@ -98,14 +98,14 @@ export default {
       if (this.interval !== null) {
         clearInterval(this.interval);
       }
-    }
+    },
   },
   provide() {
     return {
       setVM: this.setVM,
       removeVM: this.removeVM,
       disabled: this.disabled,
-      target: this.target
+      target: this.target,
     };
   },
   destroyed() {
@@ -114,7 +114,7 @@ export default {
   computed: {
     disabled() {
       return !this.conf.mobile && isMobile();
-    }
-  }
+    },
+  },
 };
 </script>

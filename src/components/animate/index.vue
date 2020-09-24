@@ -12,35 +12,35 @@ export default {
   props: {
     el: {
       type: String,
-      default: "div"
+      default: "div",
     },
     duration: {
       type: String,
-      default: "1s"
+      default: "1s",
     },
     delay: {
       type: String,
-      default: "0s"
+      default: "0s",
     },
     iteration: {
       type: Number,
-      default: 1
+      default: 1,
     },
     name: {
       type: String,
-      default: ""
+      default: "",
     },
     animateClass: {
       type: String,
-      default: "animated"
-    }
+      default: "animated",
+    },
   },
   data() {
     return {
       style: {
-        visibility: "hidden"
+        visibility: "hidden",
       },
-      className: {}
+      className: {},
     };
   },
   created() {
@@ -70,14 +70,14 @@ export default {
       const { duration, delay, iteration, style, name, animateClass } = this;
       this.className = {
         [name]: name && !hidden,
-        [animateClass]: animateClass && !hidden
+        [animateClass]: animateClass && !hidden,
       };
       this.style = {
         ...style,
         visibility: hidden ? "hidden" : "visible",
         animationDuration: duration,
         animationDelay: delay,
-        animationIterationCount: iteration
+        animationIterationCount: iteration,
       };
     },
     resetAnimation(event) {
@@ -99,13 +99,13 @@ export default {
         "animationend",
         "oanimationend",
         "webkitAnimationEnd",
-        "MSAnimationEnd"
+        "MSAnimationEnd",
       ];
-      eventArr.forEach(event => {
+      eventArr.forEach((event) => {
         on(elem, event, this.resetAnimation);
       });
-    }
+    },
   },
-  computed: {}
+  computed: {},
 };
 </script>

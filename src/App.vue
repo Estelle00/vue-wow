@@ -167,7 +167,7 @@ export default {
   name: "App",
   components: {
     UAnimateContainer,
-    UAnimate
+    UAnimate,
   },
   data() {
     return {};
@@ -175,7 +175,7 @@ export default {
   methods: {
     getTarget() {
       return this.$el;
-    }
-  }
+    },
+  },
 };
 </script>

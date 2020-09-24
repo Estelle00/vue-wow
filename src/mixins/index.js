@@ -6,23 +6,23 @@ export default {
   props: {
     offset: {
       type: Number,
-      default: 0
+      default: 0,
     },
     // 是否立即执行
     begin: {
       type: Boolean,
-      default: false
+      default: false,
     },
     // 禁用滚动计算
     scrollListen: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       end: false,
-      status: false
+      status: false,
     };
   },
   created() {
@@ -62,6 +62,6 @@ export default {
       const { scrollListen, offset } = this;
       if (!scrollListen) return false;
       return isVisible(this.$el, offset, this.target());
-    }
-  }
+    },
+  },
 };
