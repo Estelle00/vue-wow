@@ -5,10 +5,11 @@
 </template>
 <script>
 import { on } from "@/utils/dom";
+import create from "@/utils/create";
 import mixins from "@/mixins/index";
-export default {
+export default create({
+  name: "animate",
   mixins: [mixins],
-  name: "UAnimate",
   props: {
     el: {
       type: String,
@@ -43,14 +44,13 @@ export default {
       className: {},
     };
   },
+  computed: {},
   created() {
-    if (!this.$isServer) {
-      const { disabled } = this;
-      if (disabled) {
-        this.style.visibility = "visible";
-      } else {
-        this.applyStyle(true);
-      }
+    const { disabled } = this;
+    if (disabled) {
+      this.style.visibility = "visible";
+    } else {
+      this.applyStyle(true);
     }
   },
   methods: {
@@ -106,6 +106,5 @@ export default {
       });
     },
   },
-  computed: {},
-};
+});
 </script>

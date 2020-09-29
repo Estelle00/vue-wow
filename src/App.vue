@@ -101,6 +101,24 @@
     </UAnimateContainer>
   </div>
 </template>
+<script>
+import { UAnimateContainer, UAnimate } from "@/components/index";
+export default {
+  name: "App",
+  components: {
+    UAnimateContainer,
+    UAnimate,
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    getTarget() {
+      return this.$el;
+    },
+  },
+};
+</script>
 <style lang="less">
 @import "./animate";
 * {
@@ -161,21 +179,3 @@ body .txt {
   background: #ffcc35;
 }
 </style>
-<script>
-import { UAnimateContainer, UAnimate } from "@/components/index";
-export default {
-  name: "App",
-  components: {
-    UAnimateContainer,
-    UAnimate,
-  },
-  data() {
-    return {};
-  },
-  methods: {
-    getTarget() {
-      return this.$el;
-    },
-  },
-};
-</script>

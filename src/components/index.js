@@ -3,12 +3,12 @@
  */
 import UAnimateContainer from "./container/index";
 import UAnimate from "./animate/index";
-function install(Vue) {
-  Vue.component(UAnimateContainer.name, UAnimateContainer);
-  Vue.component(UAnimate.name, UAnimate);
-}
-if (typeof window !== "undefined" && window.Vue) {
-  install(window.Vue);
+function install(app) {
+  app.component(UAnimateContainer.name, UAnimateContainer);
+  app.component(UAnimate.name, UAnimate);
 }
 export { UAnimate, UAnimateContainer };
-export default install;
+export default {
+  version: "3.0.0",
+  install,
+};

@@ -1,11 +1,7 @@
 /**
  * Created by liubingwen on 2017/10/23.
  */
-import Vue from "vue";
-const isServer = Vue.prototype.$isServer;
-
 export const on = (function () {
-  if (isServer) return;
   if (document.addEventListener) {
     return function (element, event, handler) {
       if (element && event && handler) {
@@ -22,7 +18,7 @@ export const on = (function () {
 })();
 
 export const off = (function () {
-  if (!isServer && document.removeEventListener) {
+  if (document.removeEventListener) {
     return function (element, event, handler) {
       if (element && event) {
         element.removeEventListener(event, handler, false);
@@ -43,16 +39,15 @@ export const offsetTop = function (element) {
 };
 
 export const isVisible = function (ele, offset = 0, target = window) {
-  if (!isServer) {
-    const element = window.document.documentElement;
-    const offsetTopN = offsetTop(ele);
-    const viewTop = target.scrollTop || window.pageYOffset;
-    const elClientHeight = ele.clientHeight;
-    const innerHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-    const viewBottom =
-      viewTop + Math.min(element.clientHeight, innerHeight) - offset;
-    const bottom = offsetTopN + elClientHeight;
-    return offsetTopN <= viewBottom && bottom >= viewTop;
-  }
+  const element = window.document.documentElement;
+  const offsetTopN = offsetTop(ele);
+  const viewTop = target.scrollTop || window.pageYOffset;
+  const elClientHeight = ele.clientHeight;
+  const innerHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  const viewBottom =
+    viewTop + Math.min(element.clientHeight, innerHeight) - offset;
+  const bottom = offsetTopN + elClientHeight;
+  return offsetTopN <= viewBottom && bottom >= viewTop;
 };
+const overflowScrollRex = /scroll|auto/i;

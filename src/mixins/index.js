@@ -26,17 +26,12 @@ export default {
     };
   },
   created() {
-    if (!this.$isServer) {
-      try {
-        this.setVM(this);
-      } catch (e) {
-        console.log(e);
-      }
-    }
+    this.setVM(this);
   },
   mounted() {
     this.start();
   },
+  emits: ["start", "end"],
   inject: ["setVM", "removeVM", "disabled", "target"],
   methods: {
     start() {
@@ -61,7 +56,8 @@ export default {
     isVisible() {
       const { scrollListen, offset } = this;
       if (!scrollListen) return false;
-      return isVisible(this.$el, offset, this.target());
+      return false;
+      // return isVisible(this.$el, offset, this.target());
     },
   },
 };
